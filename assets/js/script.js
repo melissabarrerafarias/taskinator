@@ -222,7 +222,6 @@ var dragTaskHandler = function(event) {
   event.dataTransfer.setData("text/plain", taskId);
   
   var getId = event.dataTransfer.getData("text/plain");
-  console.log("getId:", getId, typeof getId);
 }
 
 
@@ -273,6 +272,18 @@ if (taskListEl) {
 var saveTasks =  function() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+
+var loadTasks = function() {
+  // get task items from localStorage 
+}
+
+loadTasks(); 
+
+
+
+  // convert tasks from the stringified format back into an array of objects 
+  // iterates through tasks array and creates task elements on the page from it 
+
 
 pageContentEl.addEventListener("click", taskButtonHandler);
 pageContentEl.addEventListener("change", taskStatusChangeHandler);
